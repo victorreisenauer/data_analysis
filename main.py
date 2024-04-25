@@ -50,10 +50,7 @@ ds1 = dm.build_dataset_from("240411_cont_staticPL_sample_1")
 
 fb = FigureBuilder()
 
-ds2 = Dataset.from_array(ds1.as_array())
+ds2 = dm.build_dataset_from("240412_cont_staticPL_sample 2")
 
-
-print(ds2.give_first_sample())
-
-fb.pseudoColorPlot(ds1)
+fb.compare_pseudoColorPlots(ds1, ds2)
 

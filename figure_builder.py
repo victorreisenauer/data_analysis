@@ -47,7 +47,32 @@ class FigureBuilder:
         plt.ylabel('Y')
         plt.show()
 
+    def compare_pseudoColorPlots(self, dataset1 :Dataset, dataset2 :Dataset):
+        fig, axes = plt.subplots(1, 2, figsize=(16, 6))  # Create a figure with two subplots
 
+        # Plot data from dataset1 (subplot 1)
+        axes[0].set_title('Data from Dataset 1')  # Set title for subplot 1
+        x1 = dataset1.give_sample_wavelengths()
+        y1 = dataset1.give_sample_numbers()
+        z1 = dataset1.give_sample_intensities()
+        im1 = axes[0].pcolormesh(x1, y1, z1)
+        plt.colorbar(im1, ax=axes[0])
+        axes[0].set_xlabel('X')
+        axes[0].set_ylabel('Y')
+
+        # Plot data from dataset2 (subplot 2)
+        axes[1].set_title('Data from Dataset 2')  # Set title for subplot 2
+        x2 = dataset2.give_sample_wavelengths()
+        y2 = dataset2.give_sample_numbers()
+        z2 = dataset2.give_sample_intensities()
+        im2 = axes[1].pcolormesh(x2, y2, z2)
+        plt.colorbar(im2, ax=axes[1])
+        axes[1].set_xlabel('X')
+        axes[1].set_ylabel('Y')
+
+        # Adjust layout and display the plots
+        plt.tight_layout()
+        plt.show()
     
     def quickPlot(self, dataset :Dataset):
         plt.figure(figsize=(8, 6))
