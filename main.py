@@ -7,10 +7,13 @@ from figure_builder import FigureBuilder
 dm = DataManager()
 fb = FigureBuilder()
 
+"""
 ds1 = dm.build_dataset_from("240411_cont_staticPL_sample_1")
 ds2 = dm.build_dataset_from("240412_cont_staticPL_sample 2")
+fb.compare_pseudoColorPlots(ds1, ds2, showline=True)
+"""
 
-
+ds1 = dm.build_dataset_from("240418_cont_staticPL_sample 5")
+ds2 = dm.build_dataset_from("240416_cont_staticPL_sample 11")
 
 fb.compare_pseudoColorPlots(ds1, ds2, showline=True)
-
